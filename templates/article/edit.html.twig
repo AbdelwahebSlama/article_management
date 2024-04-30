@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Article{% endblock %}
+
+{% block body %}
+    <h1>Edit Article</h1>
+    {% if article.creator == app.user %}
+        {{ include('article/_form.html.twig', {'button_label': 'Update'}) }}
+    {% endif %}
+    <a href="{{ path('app_article_index') }}">back to list</a>
+
+    {{ include('article/_delete_form.html.twig') }}
+
+
+{% endblock %}
